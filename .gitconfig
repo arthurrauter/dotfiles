@@ -1,0 +1,9 @@
+[user]
+	email = arthur@micropsi-industries.com
+	name = arthurrauter
+[core]
+	editor = vim
+[color "status"]
+    branch = yellow bold
+[push]
+	default = simple

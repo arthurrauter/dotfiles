@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -116,5 +116,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias tmux="tmux -2"
-PROMPT_DIRTRIM=3
+export TERM=xterm-256color
+force_color_prompt=yes
+alias term='gnome-terminal'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias f='find . -name'
+alias brc='vim ~/.bashrc'
+alias vrc='vim ~/.vimrc'
+alias trc='vim ~/.tmux.conf'
+
+alias M='cd ~/MICROPSI/'
+alias m2='cd ~/MICROPSI/micropsi2'
+alias mn='cd ~/MICROPSI/micropsi-nodenets'
+alias mw='cd ~/MICROPSI/micropsi-worlds'
