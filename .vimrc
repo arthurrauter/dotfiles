@@ -9,25 +9,25 @@ set undofile
 set backupdir=~/tmp//
 set directory=~/tmp//
 set undodir=~/tmp//
+set backspace=indent,eol,start
 
 nnoremap j gj
 nnoremap k gk
-nnoremap H vh
-vnoremap H h
-nnoremap L vl
-vnoremap L l
-nnoremap J vj
-vnoremap J j
-nnoremap K vk
-vnoremap K k
-
+nnoremap H B
+vnoremap H B
+nnoremap L E
+vnoremap L E
+nnoremap J }
+vnoremap J }
+nnoremap K {
+vnoremap K {
+inoremap <c-h> <nop>
+inoremap <c-j> <nop>
+inoremap <c-k> <nop>
+inoremap <c-l> <nop>
 nnoremap <c-f> /
 
 "splits
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
@@ -38,6 +38,9 @@ set smarttab
 set nosmartindent
 set listchars=tab:t·,space:·,trail:!
 set textwidth=80
+set cc=80
+set hlsearch
+set incsearch
 "MULTIPLE COMMANDS IN THE SAME LINE
 nnoremap <F2> :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
 nnoremap <F3> :e <cr>
@@ -63,12 +66,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jnurmine/zenburn'
 Plug 'tomasr/molokai'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 "Plug 'numirias/semshi'
 
 " Initialize plugin system
 call plug#end()
 
-"lightline.vim needs it
+" lightline.vim needs it
 set laststatus=2
 set noshowmode
 
@@ -78,6 +84,20 @@ let g:auto_save = 1
 " fzf vim
 nnoremap <C-p> :Files<cr>
 
-" zenburn
+" zenburn:
 colors zenburn
 set term=screen-256color
+hi Search ctermfg=209
+hi Search ctermbg=237
+hi IncSearch ctermfg=209
+hi IncSearch ctermbg=233
+
+" git gutter:
+set updatetime=100
+" write swp file after 100 if nothing happens
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=0
+highlight GitGutterAdd ctermfg=2 ctermbg=0
+highlight GitGutterChange ctermfg=3 ctermbg=0
+highlight GitGutterDelete ctermfg=1 ctermbg=0
+" colors must be here to override zenburn
