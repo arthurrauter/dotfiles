@@ -24,8 +24,9 @@ set softtabstop=4 "tab will insert/delete x spaces
 set shiftwidth=4 ">>, << and  == will shift x spaces
 set expandtab "all inserted/shifted tabs become spaces
 set autoindent "copies the indent of line above
+set nosmartindent "(smart indent is useless for python)
 
-set listchars=tab:t·,space:·,trail:!
+set listchars=tab:t·,space:·,trail:! "show invisible chars with :set list"
 
 set hlsearch "highlight found patterns with /
 set incsearch "highligt as you type
@@ -43,45 +44,47 @@ set splitbelow "horizontal splits open below the current pane
 
 set showcmd "show current command input sequence on last line of the screen.
 
-"make background transparent
-"hi Normal guibg=NONE ctermbg=NONE
+"Leader mappings
+let mapleader="\<Space>"
+"make the background transparent
+nnoremap <leader>c :hi Normal guibg=NONE ctermbg=NONE<cr>
+nnoremap <leader>n :noh<cr>
+nnoremap <leader>l :set list!<cr>
+nnoremap <leader>s :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
+nnoremap <leader>r :registers<cr>
+nnoremap <leader>j :jumps<cr>
+nnoremap <leader>m :marks<cr>
 
+"buffer management"
+nnoremap <leader>b :ls<CR>:b<Space>
 
-set tags=tags "use ctags
+"autoclose tags
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
 
-nnoremap K ^
-vnoremap K ^
-nnoremap J $
-vnoremap J $
+"Trying to change split in insert mode just ESCapes"
+inoremap <c-h> <ESC>
+inoremap <c-j> <ESC>
+inoremap <c-k> <ESC>
+inoremap <c-l> <ESC>
+"Control Find"
+nnoremap <c-f> /
 
+"HJKL in normal mode
+"J and K in normal mode could be better"
+nnoremap K :bnext<cr>
+nnoremap J :bprev<cr>
+"For convenience, those stay here"
 " nnoremap H B
 " vnoremap H B
 " nnoremap L E
 " vnoremap L E
-" nnoremap J }
 " vnoremap J }
-" nnoremap K {
 " vnoremap K {
-inoremap <c-h> <nop>
-inoremap <c-j> <nop>
-inoremap <c-k> <nop>
-inoremap <c-l> <nop>
-nnoremap <c-f> /
-
-"BELLS AND WHISTLES
-"set smarttab
-set nosmartindent
-"MULTIPLE COMMANDS IN THE SAME LINE
-nnoremap <F2> :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
-nnoremap <F3> :e <cr>
-nnoremap <F4> :buffers <cr>
-nnoremap <F5> :set list!<cr>
-nnoremap <F6> :jumps<cr>
-nnoremap <F7> :marks<cr>
-nnoremap <F8> :reg<cr>
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'itchyny/lightline.vim'
 Plug 'djoshea/vim-autoread'
 Plug '907th/vim-auto-save'
@@ -92,24 +95,16 @@ Plug 'jnurmine/zenburn'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
-"Plug 'numirias/semshi'
-"Plug 'severin-lemaignan/vim-minimap'
-"Plug 'scrooloose/nerdtree'
-"Plug 'tomasr/molokai'
-"Plug 'altercation/vim-colors-solarized'
-
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 " lightline.vim needs it
 set laststatus=2
 set noshowmode
-
 " vim-auto-save
 let g:auto_save = 1
-
 " fzf vim
 nnoremap <C-p> :Files<cr>
-
 " zenburn:
 colors zenburn
 set term=screen-256color
@@ -117,13 +112,14 @@ hi Search ctermfg=209
 hi Search ctermbg=237
 hi IncSearch ctermfg=209
 hi IncSearch ctermbg=233
-
 " git gutter:
 set updatetime=100
 " write swp file after 100 if nothing happens
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_terminal_reports_focus=0
 highlight SignColumn ctermbg=0
 highlight GitGutterAdd ctermfg=2 ctermbg=0
 highlight GitGutterChange ctermfg=3 ctermbg=0
 highlight GitGutterDelete ctermfg=1 ctermbg=0
 " colors must be here to override zenburn
+":highlight #will show the current colors
