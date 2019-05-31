@@ -44,16 +44,22 @@ set splitbelow "horizontal splits open below the current pane
 
 set showcmd "show current command input sequence on last line of the screen.
 
+nnoremap <F2> :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
+
 "Leader mappings
 let mapleader="\<Space>"
 "make the background transparent
 nnoremap <leader>c :hi Normal guibg=NONE ctermbg=NONE<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>l :set list!<cr>
-nnoremap <leader>s :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
 nnoremap <leader>r :registers<cr>
 nnoremap <leader>j :jumps<cr>
 nnoremap <leader>m :marks<cr>
+nnoremap <leader>e :edit<cr>
+
+nnoremap <leader>g :GitGutter<cr>:echo "GitGutter refresh"<cr>
+nnoremap <leader>hs :GitGutterStageHunk<cr>
+nnoremap <leader>hu :GitGutterUndoHunk<cr>
 
 "buffer management"
 nnoremap <leader>b :ls<CR>:b<Space>
