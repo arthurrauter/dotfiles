@@ -6,6 +6,7 @@ nnoremap k gk
 
 set esckeys "esc is fast
 set ttimeoutlen=50 "ms waited to timeout a key code
+"set ttimeoutlen& "set to default
 set ttyfast "more chars are sent to the screen for redrawing
 
 set fileencoding=utf-8 "used for the file
@@ -36,8 +37,9 @@ set smartcase "UnLeSs YoU hAvE a CaPiTaL lEtTeR iN iT
 
 set cursorline "highlight line the cursor is in
 set number "show line number
-set textwidth=80 "add newline when text reaches 80 chars
-set colorcolumn=80 "highlight column 80
+set textwidth=90 "add newline when text reaches 90 chars
+set colorcolumn=90 "highlight column 90
+set formatoptions=l "won't break the line while in insert mode
 
 set splitbelow "horizontal splits open below the current pane
 "set splitright "vertical splits open to the right of the current pane
@@ -65,10 +67,10 @@ nnoremap <leader>hu :GitGutterUndoHunk<cr>
 nnoremap <leader>b :ls<CR>:b<Space>
 
 "autoclose tags
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap " ""<Left>
+"inoremap ( ()<Left>
+"inoremap { {}<Left>
+"inoremap [ []<Left>
+"inoremap " ""<Left>
 
 "Trying to change split in insert mode just ESCapes"
 inoremap <c-h> <ESC>
@@ -90,18 +92,19 @@ nnoremap J :bprev<cr>
 " vnoremap J }
 " vnoremap K {
 
+
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'djoshea/vim-autoread'
 Plug '907th/vim-auto-save'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'jnurmine/zenburn'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
+"Plug 'ap/vim-buftabline'
 call plug#end()
 
 " lightline.vim needs it
