@@ -9,6 +9,8 @@ set ttimeoutlen=50 "ms waited to timeout a key code
 "set ttimeoutlen& "set to default
 set ttyfast "more chars are sent to the screen for redrawing
 
+set mouse=a "mouse can position cursor and resize splits
+
 set fileencoding=utf-8 "used for the file
 set encoding=utf-8 "used 'inside' vim to display
 
@@ -33,12 +35,14 @@ set hlsearch "highlight found patterns with /
 set incsearch "highligt as you type
 set ignorecase "ignore case...
 set smartcase "UnLeSs YoU hAvE a CaPiTaL lEtTeR iN iT
+set scrolloff=5 "will scroll if search result is too close to the border
 " hlsearch colors define after theme is applied below
 
 set cursorline "highlight line the cursor is in
 set number "show line number
 set textwidth=90 "add newline when text reaches 90 chars
 set colorcolumn=90 "highlight column 90
+set wildmenu "command line completion on steroids
 set formatoptions=l "won't break the line while in insert mode
 
 set splitbelow "horizontal splits open below the current pane
