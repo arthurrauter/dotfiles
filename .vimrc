@@ -103,12 +103,11 @@ Plug 'djoshea/vim-autoread'
 Plug '907th/vim-auto-save'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'terryma/vim-multiple-cursors'
 Plug 'jnurmine/zenburn'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
-"Plug 'ap/vim-buftabline'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 " lightline.vim needs it
@@ -134,5 +133,10 @@ highlight SignColumn ctermbg=0
 highlight GitGutterAdd ctermfg=2 ctermbg=0
 highlight GitGutterChange ctermfg=3 ctermbg=0
 highlight GitGutterDelete ctermfg=1 ctermbg=0
+highlight GitGutterDelete ctermfg=1 ctermbg=0
+
+"hight vim signature
+hi SignatureMarkText ctermfg=209 ctermbg=0
+
 " colors must be here to override zenburn
 ":highlight #will show the current colors
