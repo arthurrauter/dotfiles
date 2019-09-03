@@ -106,6 +106,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'jnurmine/zenburn'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
 call plug#end()
@@ -113,7 +115,7 @@ call plug#end()
 " lightline.vim needs it
 set laststatus=2
 set noshowmode
-" vim-auto-save
+" turn on vim-auto-save
 let g:auto_save = 1
 " fzf vim
 nnoremap <C-p> :Files<cr>
