@@ -121,13 +121,3 @@ force_color_prompt=yes
 alias term='gnome-terminal'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-alias f='find . -name'
-alias brc='vim ~/.bashrc'
-alias vrc='vim ~/.vimrc'
-alias trc='vim ~/.tmux.conf'
-
-alias M='cd ~/MICROPSI/'
-alias m2='cd ~/MICROPSI/micropsi2'
-alias mn='cd ~/MICROPSI/micropsi-nodenets'
-alias mw='cd ~/MICROPSI/micropsi-worlds'

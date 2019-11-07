@@ -35,7 +35,7 @@ set hlsearch "highlight found patterns with /
 set incsearch "highligt as you type
 set ignorecase "ignore case...
 set smartcase "UnLeSs YoU hAvE a CaPiTaL lEtTeR iN iT
-set scrolloff=5 "will scroll if search result is too close to the border
+"set scrolloff=5 "will scroll if search result is too close to the border
 " hlsearch colors define after theme is applied below
 
 set cursorline "highlight line the cursor is in
@@ -82,7 +82,7 @@ inoremap <c-j> <ESC>
 inoremap <c-k> <ESC>
 inoremap <c-l> <ESC>
 "Control Find"
-nnoremap <c-f> /
+nnoremap <c-f> :grep! --exclude=*.pyc -rnI '' .<left><left><left>
 
 "HJKL in normal mode
 "J and K in normal mode could be better"
