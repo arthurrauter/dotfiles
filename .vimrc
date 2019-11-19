@@ -110,6 +110,7 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 " lightline.vim needs it
