@@ -81,8 +81,6 @@ inoremap <c-h> <ESC>
 inoremap <c-j> <ESC>
 inoremap <c-k> <ESC>
 inoremap <c-l> <ESC>
-"Control Find"
-nnoremap <c-f> :grep! --exclude=*.pyc -rnI '' .<left><left><left>
 
 "HJKL in normal mode
 "J and K in normal mode could be better"
@@ -142,3 +140,6 @@ hi SignatureMarkText ctermfg=209 ctermbg=0
 
 " colors must be here to override zenburn
 ":highlight #will show the current colors
+
+"Control Find"
+nnoremap <c-f> :grep! --exclude=*.pyc -rnI '' .<left><left><left>
