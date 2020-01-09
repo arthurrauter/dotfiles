@@ -68,7 +68,7 @@ nnoremap <leader>hs :GitGutterStageHunk<cr>
 nnoremap <leader>hu :GitGutterUndoHunk<cr>
 
 "buffer management"
-nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>b :Buffers<cr>
 
 "autoclose tags
 "inoremap ( ()<Left>
