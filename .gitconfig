@@ -9,6 +9,7 @@
 	default = simple
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[credential]
-	username = arthurrauter
-	helper = cache --timeout=600
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[commit]
+	verbose = true

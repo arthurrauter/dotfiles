@@ -121,3 +121,56 @@ force_color_prompt=yes
 alias term='gnome-terminal'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+### THINGS THAT I LIKE ###
+
+alias v='vim'
+alias f='fzf'
+alias brc='vim ~/.bashrc'
+alias sbrc='source ~/.bashrc'
+
+# Basic access to office VPN
+alias officevpn='sudo openvpn ~/micropsi-industries/vpn/arthur.ovpn'
+
+# Basic acces to support VPN
+alias supportvpn='sudo openvpn ~/micropsi-industries/vpn/arthur-support.ovpn'
+
+# Mounting builds
+# check if builds directory exists, if not create it.
+alias mountbuilds='sudo mount -t cifs -o user="guest",pass="" //build1-linux.lan/builds ~/micropsi-industries/vpn/builds && cd ~/micropsi-industries/vpn/builds'
+
+alias builds="echo \"build1-linux/build, ssh build1-linux -l ci\""
+alias maven-urcap="mvn install -P ursimvm"
+
+alias ppd="python -c 'import sys; from pprint import pprint as pp; pp(eval(sys.stdin.read()))'"
+alias mint="curl localhost:6543/mint/get_skills && echo"
+
+alias activate='source venv/bin/activate'
+alias bdkpy='python/bin/python3.6'
+alias install_driver='bdkpy -m pip install'
+
+alias micro='cd /home/arthur/micropsi-industries'
+alias m2='cd /home/arthur/micropsi-industries/micropsi2'
+alias nodenets='cd /home/arthur/micropsi-industries/micropsi-nodenets'
+alias worlds='cd /home/arthur/micropsi-industries/micropsi-worlds'
+
+
+### END OF THINGS THAT I LIKE ###
+export CUDA_HOME="/usr/local/cuda"
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+export CPATH="$CUDA_HOME/include:$CPATH"
+export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
+export CUDA_HOME="/usr/local/cuda"
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+export CPATH="$CUDA_HOME/include:$CPATH"
+export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
+export CUDA_HOME="/usr/local/cuda"
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+export CPATH="$CUDA_HOME/include:$CPATH"
+export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
+
+tmux

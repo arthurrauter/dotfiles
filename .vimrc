@@ -10,6 +10,7 @@ set ttimeoutlen=50 "ms waited to timeout a key code
 set ttyfast "more chars are sent to the screen for redrawing
 
 set mouse=a "mouse can position cursor and resize splits
+set ttymouse=xterm2
 
 set fileencoding=utf-8 "used for the file
 set encoding=utf-8 "used 'inside' vim to display
@@ -17,10 +18,10 @@ set encoding=utf-8 "used 'inside' vim to display
 set hidden "no longer prompts for save when opening a file to current buffer
 
 " sane swap/recovery files and full undo history
-set backupdir=~/tmp//
-set directory=~/tmp//
+set backupdir=~/.vim-swp-undo//
+set directory=~/.vim-swp-undo//
 set undofile
-set undodir=~/tmp//
+set undodir=~/.vim-swp-undo//
 
 set tabstop=4 "tab will show as x spaces
 set softtabstop=4 "tab will insert/delete x spaces
