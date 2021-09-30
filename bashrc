@@ -158,9 +158,9 @@ alias worlds='cd /home/arthur/micropsi-industries/micropsi-worlds'
 function box() {
     TARGET="mirai@mirai-staging-$1"
     PASSWORD='mirai'
-    sshpass -p $PASSWORD scp ~/dotfiles/bash_aliases_box $TARGET:/tmp/bash_aliases_box
-    sshpass -p $PASSWORD scp ~/dotfiles/vimrc_box $TARGET:/tmp/vimrc_box
-    sshpass -p $PASSWORD ssh -t $TARGET ". /tmp/bash_aliases_box"
+    sshpass -p $PASSWORD scp ~/dotfiles/bash_aliases_box $TARGET:~/.bash_aliases
+    sshpass -p $PASSWORD scp ~/dotfiles/vimrc_box $TARGET:~/.vimrc
+    sshpass -p $PASSWORD ssh -t $TARGET "echo""; bash -i"
 }
 
 

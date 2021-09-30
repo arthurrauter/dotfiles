@@ -8,6 +8,3 @@ alias milocal='cd ~/.local/share/MicroPsi\ Runtime/'
 alias midb='sqlite3 ~/.local/share/MicroPsi\ Runtime/mint_v1.db'
 # Alias for toolkit (/opt/BDK/toolkit)
 alias mitoolkit='cd /opt/BDK/toolkit'
-
-alias vim='vim -u /tmp/.vimrc-box'
-alias vi='vi -u /tmp/.vimrc-box'
