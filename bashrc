@@ -159,7 +159,7 @@ function box() {
     TARGET="mirai@mirai-staging-$1"
     PASSWORD='mirai'
     sshpass -p $PASSWORD scp ~/dotfiles/bash_aliases_box $TARGET:/tmp/bash_aliases_box
-    sshpass -p $PASSWORD scp ~/dotfiles/.vimrc-box $TARGET:/tmp/.vimrc-box
+    sshpass -p $PASSWORD scp ~/dotfiles/vimrc_box $TARGET:/tmp/vimrc_box
     sshpass -p $PASSWORD ssh -t $TARGET ". /tmp/bash_aliases_box"
 }
 
