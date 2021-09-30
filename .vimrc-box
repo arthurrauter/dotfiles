@@ -1,0 +1,8 @@
+set numbers
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set path=,,**
+set wildmenu
+" Use :find to find things!
