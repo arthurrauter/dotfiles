@@ -1,0 +1,13 @@
+# Alias for tail -f /var/log/micropsi.log
+alias mitail='tail -f /var/log/micropsi.log'
+# Alias for restart
+alias mireboot='sudo service micropsi-runtime restart'
+alias miservice='sudo service micropsi-runtime'
+# Alias for cd .local/share/etc
+alias milocal='cd ~/.local/share/MicroPsi\ Runtime/'
+alias midb='sqlite3 ~/.local/share/MicroPsi\ Runtime/mint_v1.db'
+# Alias for toolkit (/opt/BDK/toolkit)
+alias mitoolkit='cd /opt/BDK/toolkit'
+
+alias vim='vim -u /tmp/.vimrc-box'
+alias vi='vi -u /tmp/.vimrc-box'
