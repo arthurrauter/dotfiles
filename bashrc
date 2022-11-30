@@ -125,6 +125,7 @@ alias term='gnome-terminal'
 
 ### THINGS THAT I LIKE ###
 
+alias t='tmux'
 alias v='vim'
 alias f='fzf'
 alias brc='vim ~/.bashrc'
@@ -150,19 +151,36 @@ alias activate='source venv/bin/activate'
 alias bdkpy='python/bin/python3.6'
 alias install_driver='bdkpy -m pip install'
 
-alias micro='cd /home/arthur/micropsi-industries'
+alias m='cd /home/arthur/micropsi-industries'
 alias m2='cd /home/arthur/micropsi-industries/micropsi2'
 alias nodenets='cd /home/arthur/micropsi-industries/micropsi-nodenets'
 alias worlds='cd /home/arthur/micropsi-industries/micropsi-worlds'
+alias jobapi='cd /home/arthur/micropsi-industries/jobapi'
+alias crunch='cd /home/arthur/micropsi-industries/crunch'
 
 function box() {
     TARGET="mirai@mirai-staging-$1"
     PASSWORD='mirai'
     sshpass -p $PASSWORD scp ~/dotfiles/bash_aliases_box $TARGET:~/.bash_aliases
     sshpass -p $PASSWORD scp ~/dotfiles/vimrc_box $TARGET:~/.vimrc
-    sshpass -p $PASSWORD ssh -t $TARGET "echo""; bash -i"
+    sshpass -p $PASSWORD ssh -t $TARGET "bash -i"
 }
 
+function asdf() {
+    ssh mirai-staging-$1 -l mirai
+}
+
+function qwer() {
+    TARGET="mirai@mirai-staging-$1"
+    scp ~/dotfiles/bash_aliases_box $TARGET:~/.bash_aliases
+    scp ~/dotfiles/vimrc_box $TARGET:~/.vimrc
+}
+
+function ffind() {
+    find . -name "$1"
+}
+
+alias stag='mirai@mirai-staging-'
 
 ### END OF THINGS THAT I LIKE ###
 export CUDA_HOME="/usr/local/cuda"
@@ -170,15 +188,12 @@ export PATH="$CUDA_HOME/bin:$PATH"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 export CPATH="$CUDA_HOME/include:$CPATH"
 export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
-export CUDA_HOME="/usr/local/cuda"
-export PATH="$CUDA_HOME/bin:$PATH"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
-export CPATH="$CUDA_HOME/include:$CPATH"
-export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
-export CUDA_HOME="/usr/local/cuda"
-export PATH="$CUDA_HOME/bin:$PATH"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
-export CPATH="$CUDA_HOME/include:$CPATH"
-export LIBRARY_PATH="$CUDA_HOME/lib64:$LIBRARY_PATH"
 
-tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+alias gkuka='scp mirai@10.42.0.106:/home/mirai/micropsi_robots/robot_path/kuka_robot.py /home/arthur/kuka_robot.py'
+alias skuka='scp /home/arthur/kuka_robot.py mirai@10.42.0.106:/home/mirai/micropsi_robots/robot_path/kuka_robot.py'
+
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
